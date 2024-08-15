@@ -1,0 +1,52 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.services-section {
+    padding: 4rem 0;
+    background-color: v.$blanco;
+    color: v.$blanco;
+
+    h2 {
+        color: v.$negro;
+        text-align: center;
+        font-size: 4rem;
+        margin-top: 0;
+        margin-bottom: 4rem;
+    }
+
+    .services-items {
+        @include m.grid(1, 2rem);
+
+        @include m.tablet {
+            @include m.grid(2, 2rem);
+        }
+
+        @include m.desktop {
+            @include m.grid(4, 2rem);
+
+        }
+    }
+
+    .service-item {
+        background-color: v.$gris-oscuro;
+        padding: 2rem;
+        border-radius: 1rem;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: v.$blanco;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        &:hover {
+            transform: translateY(-0.5rem);
+            
+        }
+    }
+}
